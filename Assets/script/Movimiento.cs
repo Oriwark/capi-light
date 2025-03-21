@@ -51,8 +51,8 @@ public class Movimiento : MonoBehaviour
     }
 
     private void Mover(float mover, bool saltar) {
-        Vector3 velocidadObjetivo = new Vector2(mover, rb2D.velocity.y);
-        rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, velocidadObjetivo, ref velocidad, suavizadoDeMovimiento);
+        Vector3 velocidadObjetivo = new Vector2(mover, rb2D.linearVelocity.y);
+        rb2D.linearVelocity = Vector3.SmoothDamp(rb2D.linearVelocity, velocidadObjetivo, ref velocidad, suavizadoDeMovimiento);
 
         if (mover > 0 && !mirandoDerecha) {
             //Girar
